@@ -1,1 +1,62 @@
 @import './variables.less';
+.burger{
+  display: none;
+  margin-inline-end:1rem;
+  @media screen and (max-width:550px) {
+    display: block;
+  }
+}
+.header{
+  background-color: rgb(62,191,255);
+  position: relative;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  position: fixed;
+  font-family: @font-primary;
+  font-weight: 500;
+
+  @media screen and (max-width:768px){
+    font-size: 15px;
+  }
+}
+.logo{
+  margin-inline-start: 1rem;
+}
+
+.list-menu{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-inline-end: 2rem;
+  @media screen and (max-width:550px) {
+    display: none; 
+    position: absolute;
+    top:2.5rem;
+    width: 90vw;
+    right: -10px;
+    background-color: rgba(62, 191, 255, 0.525);
+    .burger{
+      display: block;
+    }
+  }
+}
+.display-on{
+  display:block;
+}
+.anchor{
+  color:@white;
+  :hover{
+    color:@dark-blue;
+    border-radius: 10px;
+    background-color: @white;
+  }
+}
+.list-menu__item{
+  list-style-type: none;
+  min-width: 90px;
+  text-align: center; 
+  color:@white;
+}

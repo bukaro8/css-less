@@ -4,19 +4,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
   <link rel="stylesheet/less" type="text/css" href="./styles/main.less" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
 </head>
 <body>
 <header class="header">
-  <h1>hola</h1>
-  <nav class="navbar">
+  <img class='logo'src="./images/logo.svg" alt="logo">
 
+  <nav class="navbar">
+    <img id='burger' class="burger" src="./images/mobile/menu_black_24dp.svg"  alt="">
+    <ul class="list-menu">
+      <a class='anchor' href=""><li class="list-menu__item">About</li></a>
+      <a class='anchor' href=""><li class="list-menu__item">Services</li></a>
+      <a class='anchor' href=""><li class="list-menu__item">Projects</li></a>
+      <a class='anchor' href=""><li class="list-menu__item">Contact</li></a>
+    </ul>
   </nav>
+ 
 </header>
 
-  <!-- About
-  Services
-  Projects
-  Contact
+  <!-- 
+  
+  
+  
 
   We are creatives
 
@@ -61,4 +71,5 @@
   
 </body>
 <script src="https://cdn.jsdelivr.net/npm/less@4" ></script>
+<script src="./js/index.js"></script>
 </html>
