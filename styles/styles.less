@@ -1,0 +1,65 @@
+@import "./variables.less";
+body {
+    margin: 0;
+    padding: 0;
+}
+p {
+    font-family: @font-secondary, sans-serif;
+    font-size: @font-size;
+    opacity: 0.6;
+}
+a {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: @font-primary, sans-serif;
+    color: @very-dark-desaturated-blue;
+    
+}
+.products {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    text-align: left;
+    img {
+        width: 100%;
+    }
+}
+.container {
+    padding: 0 6rem;
+}
+.subtitle {
+    font-family: @font-primary, sans-serif;
+    font-size: 2rem;
+}
+.text-container {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    .subtitle-above {
+        position: absolute;
+        top: 60%;
+        left: 36%;
+    }
+    .text-above {
+        position: absolute;
+        padding: 3vw 7vw;
+        top: 70%;
+    }
+}
+.graphic-design-text {
+    color: @dark-desaturated-cyan;
+}
+.photography-text {
+    color: @dark-blue;
+}
+@media (max-width: 450px) {
+    .products {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        align-items: center;
+        text-align: left;
+        img {
+            width: 100%;
+        }
+    }
+}
