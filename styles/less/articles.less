@@ -1,0 +1,95 @@
+@import './variables.less';
+.first-line-product, .third-line-product{
+  .flex(row,space-around);
+  flex-wrap: wrap-reverse;
+  
+}
+.second-line-product{
+  flex-direction: row-reverse;
+  
+}
+.article-item, .article-img{
+  width: 50%;
+  @media screen and (max-width:550px){
+    width: 100%;
+  }
+
+}
+
+.article-img{
+  background-size:cover  ;
+  background-repeat:no-repeat;
+  background-position: center center;
+  height: 50vh;
+}
+.first-article-img{
+  background-image: url('/images/desktop/image-transform.jpg');
+  
+}
+.second-article-img{
+  background-image: url('/images/desktop/image-stand-out.jpg');
+}
+.article-content{
+  max-width: 80%;
+  height: 80%;
+  .flex(column,space-around,flex-start);
+  // .border()
+}
+.article-item{
+  height: 50vh;
+  .flex();
+}
+.article-item__subtitle, span{
+  font-family: @font-secondary;
+}
+.article-content p{
+  font-family: @font-primary;
+}
+.article-content span{
+  border-bottom: 2px solid @yellow;
+}
+.article-item__cherries{
+  background-image: url(/images/desktop/image-graphic-design.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  @media screen and (max-width:550px){
+    background-image: url(/images/mobile/image-graphic-design.jpg);
+  }
+}
+.article-item__orange{
+  background-image: url(/images/desktop/image-photography.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  @media screen and (max-width:550px){
+    background-image: url(/images/mobile/image-photography.jpg);
+  }
+}
+.third-line-product{
+ 
+  
+ 
+  min-height: fit-content;
+}
+.article-content__last{
+  min-height: 100%;
+  .flex(column,flex-end,center);
+  // .border();
+
+  
+}
+.article-content__last  p, .article-item__subtitle{
+  width: 100%;
+  text-align: center;
+  margin-block-end: 1rem;
+}
+.article-item__cherries, .article-item__orange{
+  @media screen and (max-width:768px){
+    height: 75vh;
+  }
+  @media screen and (max-width:550px){
+    height:50vh;
+  }
+
+}
