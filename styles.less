@@ -1,5 +1,6 @@
 
 /***** VARIABLES *****/
+
 @text-font: 'Barlow', sans-serif;
 @title-font: 'Fraunces', serif;
 
@@ -11,9 +12,12 @@
 @navbar-text-color-mobile: hsl(232, 10%, 55%);
 
 @navbar-bg-color: hsl(200, 100%, 62%);
-@navbar-option-bg-color: hsl(200, 100%, 72%);
+@navbar-bg-color-mobile: @navbar-text-color;
+@navbar-accent-color: hsl(200, 100%, 72%);
+@navbar-accent-color-mobile: hsl(51, 100%, 49%);
+@navbar-accent-text-mobile: hsl(212, 27%, 19%);
 
-@width-mobile: 375px;
+@width-mobile: 760px;
 @width-desktop: 1440px;
 
 
@@ -27,6 +31,7 @@
 
 body{
     font-size: 18px;
+    background-color: @navbar-bg-color;
 }
 
 
@@ -35,7 +40,7 @@ body{
 .navbar{
     font-family: @text-font;
     color: @navbar-text-color;
-    padding: 20px;
+    padding: 25px;
     background-color: @navbar-bg-color;
     position: fixed;
     width: 100vw;
@@ -44,7 +49,6 @@ body{
     justify-content: space-between;
     align-items: center;
 }
-
 .navbar-links{
     display: flex;
     flex-direction: row;
@@ -64,7 +68,46 @@ body{
         font-family: @title-font;
         text-transform: uppercase;
         font-size: 1rem;
-        background-color: @navbar-option-bg-color;
+        background-color: @navbar-accent-color;
         padding: 15px 20px;
+    }
+}
+
+
+/***** MOBILE *****/
+
+@media (max-width: @width-mobile) {
+    .toggle-navbar{
+        display: block;
+    }
+    .navbar-links{
+        display: none;
+        position: absolute;
+        top: 70vh; left: 0; bottom: 0; right: 0vw;
+        margin: auto 25px;
+        justify-content: center;
+        flex-direction: column;
+        height: 300px;
+        padding: 50px 0 50px 30px;
+        color: @navbar-text-color-mobile;
+        background-color: @navbar-bg-color-mobile;
+        border-top: 30px solid @navbar-bg-color;
+        border-right: 30px solid transparent;
+        li{
+            margin: 15px 0;
+        }
+        .navbar-link:hover{
+            background-color: @navbar-accent-color-mobile;
+            color: @navbar-accent-text-mobile;
+        }
+    }
+}
+
+
+/***** DESKTOP *****/
+
+@media (min-width: 760px) {
+    .toggle-navbar{
+        display: none;
     }
 }
