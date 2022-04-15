@@ -17,6 +17,7 @@
 	<!-- end less -->
 	
 	<link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+	<script src="index.js" async></script>
 
 	<title>Frontend Mentor | Sunnyside agency landing page</title>
 </head>
@@ -27,7 +28,10 @@
 			<img class="logo" src="./images/logo.svg" alt="sunnyside">
 		</div>
 		<nav>
-			<ul class="navbar-links">
+			<div class="toggle-navbar">
+				<img src="images/icon-hamburger.svg" alt="">
+			</div>
+			<ul id="navbarLinks" class="navbar-links">
 				<li>
 					<a href="#about" class="navbar-link">About</a>
 				</li>
