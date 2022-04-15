@@ -6,16 +6,15 @@
 
 @text-light-weight: 600; /* primary font light weight */
 @title-light-weight: 700; /* secondary font light weight */
-
 @bold-weight: 900;
+
 @navbar-text-color: hsl(0, 0%, 100%);
 @navbar-text-color-mobile: hsl(232, 10%, 55%);
-
+@navbar-accent-text-color: hsl(212, 27%, 19%);
 @navbar-bg-color: hsl(200, 100%, 62%);
 @navbar-bg-color-mobile: @navbar-text-color;
 @navbar-accent-color: hsl(200, 100%, 72%);
 @navbar-accent-color-mobile: hsl(51, 100%, 49%);
-@navbar-accent-text-mobile: hsl(212, 27%, 19%);
 
 @width-mobile: 760px;
 @width-desktop: 1440px;
@@ -73,6 +72,30 @@ body{
     }
 }
 
+.header-bg{
+    height: 100vh;
+    background-image: url('images/desktop/image-header.jpg');
+    background-position: center;
+    background-size: cover;
+    color: @navbar-text-color;
+    font-weight: @bold-weight;
+    .bg-wrapper{
+        position: relative;
+        top: 25vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .header-text{
+            font-family: @title-font;
+            font-size: 1.6rem;
+            letter-spacing: 10px;
+        }
+        .arrow-icon{
+            margin-top: 4rem;
+        }
+    }
+}
+
 
 /***** MOBILE *****/
 
@@ -97,8 +120,8 @@ body{
             margin: 15px 0;
         }
         .navbar-link:hover{
+            color: @navbar-accent-text-color;
             background-color: @navbar-accent-color-mobile;
-            color: @navbar-accent-text-mobile;
         }
     }
 }
