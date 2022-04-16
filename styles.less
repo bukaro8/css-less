@@ -1,97 +1,110 @@
 
+/***** root *****/
+
+html{
+    font-size: 62.5%; // rounds 16px to 10px
+}
+
+
 /***** VARIABLES *****/
+
+@width-mobile: 76em; // equivalent to 760px
+@width-desktop: 144em; //equivalent to 1440px
 
 @text-font: 'Barlow', sans-serif;
 @title-font: 'Fraunces', serif;
 
+@main-color: hsl(200, 100%, 62%);
+@light-color: hsl(0, 0%, 100%);
+@dark-color: hsl(212, 27%, 19%);
+@text-color: hsl(232, 10%, 55%);
+@bg-accent-color: hsl(200, 100%, 72%);
+
 @text-light-weight: 600; /* primary font light weight */
 @title-light-weight: 700; /* secondary font light weight */
 @bold-weight: 900;
-
-@navbar-text-color: hsl(0, 0%, 100%);
-@navbar-text-color-mobile: hsl(232, 10%, 55%);
-@navbar-accent-text-color: hsl(212, 27%, 19%);
-@navbar-bg-color: hsl(200, 100%, 62%);
-@navbar-bg-color-mobile: @navbar-text-color;
-@navbar-accent-color: hsl(200, 100%, 72%);
-@navbar-accent-color-mobile: hsl(51, 100%, 49%);
-
-@width-mobile: 760px;
-@width-desktop: 1440px;
+@fs-body: 1.8rem;
+@fs-h1: 4.5rem;
 
 
-/***** ESTILOS BASE *****/
+/***** BASE STYLES *****/
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
 body{
-    font-size: 18px;
-    background-color: @navbar-bg-color;
-}
-
-
-/***** NAVIGATION BAR *****/
-
-.navbar{
     font-family: @text-font;
-    color: @navbar-text-color;
-    padding: 25px;
-    background-color: @navbar-bg-color;
-    position: fixed;
-    width: 100vw;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+    font-size: @fs-body;
+    color: @light-color;
+    text-align: center;
 }
-.navbar-links{
+h1{
+    font-family: @title-font;
+    font-size: @fs-h1;
+    letter-spacing: .2em;
+    margin-top: -1em;
+    margin-bottom: 1.5em;
+}
+.flex(@flx-d: row, @flx-jc: center, @flx-ai: center){
     display: flex;
-    flex-direction: row;
-    justify-content: end;
-    align-items: center;
-    li{
-        width: 130px; /* setting a fixed width helps avoid moving other elements on hover */
-        list-style-type: none;
-        text-align: center;
-    }
-    .navbar-link{
-        color: inherit;
-        text-decoration: none;
-    }
-    .navbar-link:hover{
-        border-radius: 30px;
-        font-family: @title-font;
-        text-transform: uppercase;
-        font-size: 1rem;
-        background-color: @navbar-accent-color;
-        padding: 15px 20px;
-    }
+    flex-direction: @flx-d;
+    justify-content: @flx-jc;
+    align-items: @flx-ai;
+}
+.accent(@color: @dark-color, @bg-color: @light-color){
+    text-transform: uppercase;
+    font-family: @title-font;
+    padding: 1em 1.5em;
+    border-radius: 3rem;
+    font-size: 1.5rem;  
+    color: @color;
+    background-color: @bg-color;
 }
 
-.header-bg{
+
+/***** HEADER *****/
+
+header{
     height: 100vh;
+    background-color: @main-color;
     background-image: url('images/desktop/image-header.jpg');
     background-position: center;
     background-size: cover;
-    color: @navbar-text-color;
-    font-weight: @bold-weight;
-    .bg-wrapper{
-        position: relative;
-        top: 25vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        .header-text{
-            font-family: @title-font;
-            font-size: 1.6rem;
-            letter-spacing: 10px;
+    outline: 1px solid blue;
+    .header-msg{
+        height: 100%;
+        .flex(@flx-d:column);
+    }
+}
+.toggle-navbar{display: none;}
+
+
+/***** NAVBAR *****/
+
+.navbar{
+    position: fixed;
+    width: 100%;
+    z-index: 99;
+    padding: 1.5em;
+    .flex(@flx-jc:space-between);
+    background-color: @main-color;
+    .navbar-links{
+        .flex();
+        li{
+            list-style-type: none;
+            min-width: 7.5em;
         }
-        .arrow-icon{
-            margin-top: 4rem;
+        .navbar-link{
+            text-decoration: none;
+            color: @light-color;
+        }
+        .navbar-link:hover{
+            .accent(@light-color,@bg-accent-color);
+        }
+        .accented{
+            .accent();
         }
     }
 }
@@ -99,38 +112,39 @@ body{
 
 /***** MOBILE *****/
 
-@media (max-width: @width-mobile) {
-    .toggle-navbar{
-        display: block;
-    }
-    .navbar-links{
-        display: none;
-        position: absolute;
-        top: 70vh; left: 0; bottom: 0; right: 0vw;
-        margin: auto 25px;
-        justify-content: center;
-        flex-direction: column;
-        height: 300px;
-        padding: 50px 0 50px 30px;
-        color: @navbar-text-color-mobile;
-        background-color: @navbar-bg-color-mobile;
-        border-top: 30px solid @navbar-bg-color;
-        border-right: 30px solid transparent;
-        li{
-            margin: 15px 0;
+@media (max-width: @width-mobile){
+    @bg-accent-color: hsl(51, 100%, 49%);
+    @fs-h1: 3rem;
+    .toggle-navbar{display: block;}
+    .navbar{
+        .navbar-links{
+            display: none;
+            flex-direction: column;
+            justify-content: space-evenly;
+            position: absolute;
+            top: 7ch; right: 0; bottom: 0; left: 0;
+            margin: auto;
+            align-items: center;
+            min-height: 17em;
+            max-width: 100%;
+            margin: 0 1.5em;
+            background-color: @light-color;
+            border-top: 1.5em solid @main-color;
+            border-right: 1.5em solid transparent;
+            li{
+                margin-left: 1.5em;
+            }
+            .navbar-link{
+                color: @text-color;
+
+            }
+            .navbar-link:hover{
+                .accent(@light-color,@bg-accent-color);
+                padding: 1em 1.5em;
+            }
+            .accented{
+                .accent(@bg-color:@bg-accent-color);
+            }
         }
-        .navbar-link:hover{
-            color: @navbar-accent-text-color;
-            background-color: @navbar-accent-color-mobile;
-        }
-    }
-}
-
-
-/***** DESKTOP *****/
-
-@media (min-width: 760px) {
-    .toggle-navbar{
-        display: none;
     }
 }
