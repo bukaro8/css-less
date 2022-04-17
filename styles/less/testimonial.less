@@ -1,0 +1,55 @@
+@import './variables.less';
+.testimonial{
+  min-height:100vh ;//!check later
+  .flex();
+}
+.testimonial-title{
+  font-family: @font-secondary;
+  color:@very-dark-grayish;
+  margin-block-end: 2rem;
+}
+.cards-container{
+  .flex(row);
+  flex-wrap: wrap;
+  width: 80vw;
+  height: 60vh;
+  @media screen and (max-width:768px){
+    width: 100vw;
+  }
+  @media screen and (max-width:550px){
+    .flex(row);
+    text-align: center;
+    width: 100%;
+    .card{
+      width: 60%;
+      height: 80vh
+    }
+    // .border();
+  }
+
+}
+.card{
+  .flex(column,space-around,center);
+  height: 100%;
+  width: 30%;
+  border:1.5%;
+  // .border(green);
+}
+.card-img{
+  border-radius:50%;
+  width: 30%;
+}
+.card-text{
+  text-align: center;
+  width: 90%;
+}
+.card-name, .card-jobName{
+  text-align: center
+}
+.card-bottom{
+  .flex();
+}
+.card-jobName{
+  color:@very-dark-grayish
+}
+
