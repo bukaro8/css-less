@@ -1,77 +1,67 @@
 // Products
-.banner{
-  
-
-  .h2{
-    .flex(column,center,center);
-    color :@banner-font-color;
-    padding:15 px;
-    font-size: 20px;
-  }
-  .header{
-    width :100%;
-    padding: 15 px ;
-    margin: 2px ;
-    .flex(row,center,center)
-  }
-}
-
-
- .brand{
-   display :flex;
-   //height: auto;
-    .Text1{
-     width:60%;
-     text-align: left;
-     margin-left: 5%;
-     padding-top: 10%;
-     padding-right: 42px;
-          .title1{
-           
-              font-size: 17px;
-             
-             
-                    }
-        .paragraf1{
-          font-size: 14px;
-                   
-        }
-        .learn1{
-          padding-top: 5px;
-          font-size: 8px;
-         
-        }
-   }
-    .egg {
-    width: 100%;
-          }
- }
- .stand-out{
-  display :flex;
-  height: auto;
-  .standout {
-   width: 100%;
-         }
-   .Text2{
-     width: 60%;
-      flex-direction: column;
-      text-align: left;
-      padding-left: 10%;
-      padding-top: 10%;
-      padding-right: 42px;
-     
-         .title2{
-          font-size: 17px;
-                   }
-       .paragraf2{
-         font-size: 14px;
-                  
-       }
-       .learn2{
-        padding-top: 5px;
-          font-size: 8px;
-        
-       }
-  
-      }
+ .brand,.stand-out{
+    .flex(row,space-around,left );
+    .Text1,.Text2{
+      width:50%;
+        .flex(column,center,left);
+        padding: 10%;
+     .learn1{
+      border-bottom: 2px solid @yellow;// no funciona!!!!
+     }
+     .learn2{
+      border-bottom: 2px solid @soft-red; // no funciona!!!!
+     }
     }
+        }
+
+.brand,.orange{
+  @media screen and (max-width:550px){
+        width: 100%;
+}
+}
+     
+       .graphic-design{
+        
+        background-image: url(/images/desktop/image-graphic-design.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        @media screen and (max-width:550px){
+             background-image: url(/images/mobile/image-graphic-design.jpg)
+                }
+              }
+      .photography{
+     
+        background-image: url(/images/desktop/image-photography.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+         @media screen and (max-width:550px){
+           background-image: url(/images/mobile/image-photography.jpg);
+              }
+      }
+      
+      
+  .third-row{
+    min-height: 100%;
+    display: flex;
+    align-content: stretch;
+    //.flex(row,space-between,left );
+     // 
+     .text3,.text4 {
+      width: 50%;
+      align-content: flex-end; 
+      text-align: center;
+      //   margin-block-end: 0.5rem;
+      margin-block-end: 0.1rem;
+   }  
+     }
+.graphic-design, .photography{
+  @media screen and (max-width:768px){
+    height: 100vh;
+  }
+  @media screen and (max-width:550px){
+    height:50vh;
+  }
+
+ }

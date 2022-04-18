@@ -1,0 +1,27 @@
+.banner {
+  background-image: url(/images/desktop/image-header.jpg);
+  padding-block-start: 2.5rem;
+  position: relative;
+  background-position: center center;
+  background-repeat: none;
+  background-size: cover;
+  height: 55vw;
+  max-height: 95vh;
+  z-index: -1;
+  .title {
+    .flex(row,center,center);
+    color: @banner-font-color;
+    font-size: 5vw;
+    margin-block-start: 10%;
+    font-family: @font-secondary;
+  }
+  .arrow {
+    height: 10vw;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+  }
+}
