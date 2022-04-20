@@ -29,11 +29,13 @@
 .cup {
   background-image: url('/images/desktop/image-stand-out.jpg');
 }
-.contain{
+.contain {
   max-width: 80%;
   height: 80%;
   .flex(column,space-around,flex-start);
-  // .border()
+  padding-inline: 0.1rem;
+  padding-top: 0rem;
+
 }
 .item{
   height: 50vh;
@@ -46,9 +48,14 @@
   font-family: @font-primary;
  
  }
-.contain span{
-  border-bottom: 2px solid @yellow;
+.Text1 span{
+  border-bottom: 3px solid @yellow;
 } 
+
+.Text2 span{
+  border-bottom: 3px solid @soft-red;
+} 
+
 
 .graphic-design {
   background-image: url(/images/desktop/image-graphic-design.jpg);
@@ -75,7 +82,6 @@
 .text-last {
   min-height: 100%;
   .flex(column,flex-end,center);
-  // .border();
 
   
 }
