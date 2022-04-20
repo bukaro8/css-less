@@ -1,130 +1,95 @@
 // Products
 
-
-.brand{
-
-  border : 1px solid red;
-  height : 100%;
-  display: flex;
+.brand, .stand-out, .third-row{
+  .flex(row,space-around);
   flex-wrap: wrap-reverse;
+  
 }
-
-.contain{
-      width: 10%;
-     height :10%;
-    // min-width: 200px;
-   
-      }
-
-.ali{
-
-background-image: url(/images/desktop/image-transform.jpg);
-background-size : cover;
-background-repeat: no-repeat;
-background-position: center center;
-              @media screen and (max-width:550px){
-              background-image: url(/images/desktop/image-transform.jpg);
-                    }
-
-
+.stand-out{
+  flex-direction: row-reverse;
+  
+}
+.item, .art-img {
+  width: 50%;
+  @media screen and (max-width:550px){
+    width: 100%;
   }
+
+}
+.art-img{
+  background-size:cover  ;
+  background-repeat:no-repeat;
+  background-position: center center;
+  height: 50vh;
+}
+.egg {
+  background-image: url('/images/desktop/image-transform.jpg');
+  
+}
+.cup {
+  background-image: url('/images/desktop/image-stand-out.jpg');
+}
+.contain{
+  max-width: 80%;
+  height: 80%;
+  .flex(column,space-around,flex-start);
+  // .border()
+}
+.item{
+  height: 50vh;
+  .flex();
+}
+.title, span{
+  font-family: @font-secondary;
+}
+.contain p {
+  font-family: @font-primary;
  
-  
- 
- .Text1{
-     background-color: brown;
-     
-       .flex(column,center,left);
-       padding: 10%;
-      .learn1{
-            border-bottom: 2px solid @yellow;// no funciona!!!!
-           }
-       }             
-  
-//   .stand-out {
-//   .cup {
+ }
+.contain span{
+  border-bottom: 2px solid @yellow;
+} 
 
-//         background-image: url(./images/desktop/image-stand-out.jpg);
-//         background-size: cover;
-//         background-repeat: no-repeat;
-//         background-position:center center;
-//         @media screen and (max-width:550px){
-//             background-image: url(images/desktop/image-stand-out.jpg);
-//                             }
-//        }
-//        .Text2{
-//         width:50%;
-//           .flex(column,center,left);
-//           padding: 10%;
-//           .learn1{
-//             border-bottom: 2px solid @yellow;// no funciona!!!!
-//              }
-//           } 
-//         }
-      
-// //  .brand,.stand-out{
+.graphic-design {
+  background-image: url(/images/desktop/image-graphic-design.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  @media screen and (max-width:550px){
+    background-image: url(/images/mobile/image-graphic-design.jpg);
+  }
+}
+.photography{
+  background-image: url(/images/desktop/image-photography.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  @media screen and (max-width:550px){
+    background-image: url(/images/mobile/image-photography.jpg);
+  }
+}
+.third-row{
+   
+  min-height: fit-content;
+}
+.text-last {
+  min-height: 100%;
+  .flex(column,flex-end,center);
+  // .border();
+
   
-// //     .Text1,.Text2{
-// //       width:50%;
-// //         .flex(column,center,left);
-// //         padding: 10%;
-// //      .learn1{
-// //       border-bottom: 2px solid @yellow;// no funciona!!!!
-// //      }
-// //      .learn2{
-// //       border-bottom: 2px solid @soft-red; // no funciona!!!!
-// //      }
-// //     }
-// //         }
+}
+ .text-last p, .title{
+  width: 100%;
+  text-align: center;
+  margin-block-end: 2rem;
+}
+.graphic-design, .photography{
+  @media screen and (max-width:768px){
+    height: 75vh;
+  }
+  @media screen and (max-width:550px){
+    height:50vh;
+  }
 
-// // .brand,.orange{
-// //   @media screen and (max-width:550px){
-// //         width: 100%;
-// // }
-// // }
-     
-// //        .graphic-design{
-        
-// //         background-image: url(/images/desktop/image-graphic-design.jpg);
-// //         background-size: cover;
-// //         background-repeat: no-repeat;
-// //         background-position: center center;
-// //         @media screen and (max-width:550px){
-// //              background-image: url(/images/mobile/image-graphic-design.jpg)
-// //                 }
-// //               }
-// //       .photography{
-     
-// //         background-image: url(/images/desktop/image-photography.jpg);
-// //         background-size: cover;
-// //         background-repeat: no-repeat;
-// //         background-position: center center;
-// //          @media screen and (max-width:550px){
-// //            background-image: url(/images/mobile/image-photography.jpg);
-// //               }
-// //       }
-      
-      
-// //   .third-row{
-// //     min-height: 100%;
-// //     display: flex;
-// //     align-content: stretch;
-// //     //.flex(row,space-between,left );
-// //      // 
-// //      .text3,.text4 {
-// //       width: 50%;
-// //       align-content: flex-end; 
-// //       text-align: center;
-// //       //   margin-block-end: 0.5rem;
-// //       margin-block-end: 0.1rem;
-// //    }  
-// //      }
-// // .graphic-design, .photography{
-// //   @media screen and (max-width:768px){
-// //     height: 100vh;
-// //   }
-// //   @media screen and (max-width:550px){
-// //     height:50vh;
-// //   }
-
-// // } }
+}
