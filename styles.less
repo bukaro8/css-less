@@ -24,7 +24,7 @@ html{
 @title-light-weight: 700; /* secondary font light weight */
 @bold-weight: 900;
 @fs-body: 1.8rem;
-@fs-h1: clamp(3rem, 6vw + 1.6rem, 6rem);
+@fs-h1: clamp(4.2rem, 6vw + 1.6rem, 6rem);
 
 
 /***** BASE STYLES *****/
@@ -75,9 +75,11 @@ header{
     background-size: cover;
     background-repeat: no-repeat;
     .header-msg{
-        height: 100%;
+        position: relative;
+        top: 30%; right: 0; bottom: 0; left: 0;
+        margin: 0 1.6em;
+        height: 50%;
         .flex(@flx-d:column);
-        margin: 0 1.5em;
     }
 }
 .toggle-navbar{display: none;}
